@@ -1,18 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {MatCardModule} from '@angular/material/card';
+import { RecientesComponent } from './components/recientes/recientes.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+
+
+const rutas: Routes = [
+  { path: '', component: InicioComponent },
+  { path: 'recientes', component: RecientesComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InicioComponent,
+    RecientesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(rutas),
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
