@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { RecientesComponent } from './components/recientes/recientes.component';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -15,19 +16,14 @@ const rutas: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
+  declarations: [AppComponent,
     InicioComponent,
-    RecientesComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
+    RecientesComponent],
+  imports: [BrowserModule, AppRoutingModule,
     RouterModule.forRoot(rutas),
-    MatCardModule,
-  ],
+    MatCardModule,, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 

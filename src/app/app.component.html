@@ -1,11 +1,8 @@
-<nav>
-  <a routerLink="/">Inicio</a> | 
-  <a routerLink="/recientes">Recientes</a> | 
-</nav>
-<router-outlet>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Sarthak</mat-card-title>
-    </mat-card-header>
-  </mat-card>
-</router-outlet>
+<h1>{{title}}</h1>
+
+<form>
+  Numero 1: <input type="text" [(ngModel)]="num1" name="num1">
+  Numero 2: <input type="text" [(ngModel)]="num2" name="num2">
+  <input class="btn btn-secondary" type="submit" value="Sumar" (click)="sumar()" />
+</form>
+Resultado: {{resultado}}
