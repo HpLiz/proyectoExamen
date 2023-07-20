@@ -13,10 +13,17 @@ import { LoginComponent } from './login/login.component';
 const rutas: Routes = [
   { path: '', component: InicioComponent },
   { path: 'recientes', component: RecientesComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // redirige al login si la ruta no se encuentra
 ];
 
 @NgModule({
-  declarations: [AppComponent, InicioComponent, RecientesComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    InicioComponent,
+    RecientesComponent,
+    LoginComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,5 +33,6 @@ const rutas: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [RouterModule],
 })
 export class AppModule {}
