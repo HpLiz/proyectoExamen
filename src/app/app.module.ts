@@ -8,14 +8,27 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { RecientesComponent } from './components/recientes/recientes.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const rutas: Routes = [
-  { path: '', component: InicioComponent },
+  // { path: '', component: InicioComponent },
   { path: 'recientes', component: RecientesComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // redirige al login si la ruta no se encuentra
 ];
 
 @NgModule({
-  declarations: [AppComponent, InicioComponent, RecientesComponent],
+  declarations: [
+    AppComponent,
+    InicioComponent,
+    RecientesComponent,
+    LoginComponent,
+    HomeComponent,
+    NavbarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,5 +38,6 @@ const rutas: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [RouterModule],
 })
 export class AppModule {}
