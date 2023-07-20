@@ -6,12 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Mini Calculadora';
-  num1: number = 0;
-  num2: number = 0;
-  resultado: number = 0;
+  email: string = '';
+  password: string = '';
 
-  sumar(): void {
-    this.resultado = Number(this.num1) + Number(this.num2);
+  login() {
+    alert(`email: ${this.email}, password: ${this.password}`);
   }
 }
