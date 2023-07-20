@@ -8,6 +8,20 @@
       <div class="card-body">
         <div class="form-control">
           <label class="label">
+            <span class="label-text">Nombre Completo</span>
+          </label>
+          <input type="text" placeholder="Nombre" class="input input-bordered"
+            [(ngModel)]="fullname" />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Nombre Completo</span>
+          </label>
+          <input type="text" placeholder="Nombre" class="input input-bordered"
+            [(ngModel)]="fullname" />
+        </div>
+        <div class="form-control">
+          <label class="label">
             <span class="label-text">Correo electrónico</span>
           </label>
           <input type="text" placeholder="email" class="input input-bordered"
@@ -17,11 +31,9 @@
           <label class="label">
             <span class="label-text">Contraseña</span>
           </label>
-          <input type="text" placeholder="password" class="input input-bordered"
+          <input type="password" placeholder="password"
+            class="input input-bordered"
             [(ngModel)]="password" />
-          <label class="label">
-            <a href="#" class="label-text-alt link link-hover">Olvidaste tu contraseña?</a>
-          </label>
         </div>
         <div class="form-control mt-6">
           <button type="button" class="btn btn-primary" (click)="login()">Ingresar</button>
