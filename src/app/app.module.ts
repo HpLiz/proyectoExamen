@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { RecientesComponent } from './components/recientes/recientes.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { LoginComponent } from './login/login.component';
 
 const rutas: Routes = [
   { path: '', component: InicioComponent },
@@ -15,7 +16,7 @@ const rutas: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, InicioComponent, RecientesComponent],
+  declarations: [AppComponent, InicioComponent, RecientesComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
