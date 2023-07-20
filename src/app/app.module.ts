@@ -10,6 +10,7 @@ import { RecientesComponent } from './components/recientes/recientes.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const rutas: Routes = [
   // { path: '', component: InicioComponent },
@@ -26,6 +27,7 @@ const rutas: Routes = [
     RecientesComponent,
     LoginComponent,
     HomeComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
