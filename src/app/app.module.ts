@@ -21,7 +21,7 @@ const rutas: Routes = [
     RecientesComponent],
   imports: [BrowserModule, AppRoutingModule,
     RouterModule.forRoot(rutas),
-    MatCardModule,, FormsModule],
+    MatCardModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
