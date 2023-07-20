@@ -7,10 +7,10 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { RecientesComponent } from './components/recientes/recientes.component';
-import { InicioComponent } from './components/inicio/inicio.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegistrosComponent } from './components/registros/registros.component';
 
 const rutas: Routes = [
   // { path: '', component: InicioComponent },
@@ -23,11 +23,11 @@ const rutas: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
     RecientesComponent,
     LoginComponent,
     HomeComponent,
     NavbarComponent,
+    RegistrosComponent,
   ],
   imports: [
     BrowserModule,
