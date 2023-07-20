@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   fullname: any = sessionStorage.getItem('fullname');
+
+  // TODO funcion para cerrar sesion
+  // sessionStorage.removeItem(Apellido) nombre completo, email
+  logout() {
+    sessionStorage.clear();
+  }
 }
