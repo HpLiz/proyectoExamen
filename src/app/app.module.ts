@@ -9,11 +9,13 @@ import { MatCardModule } from '@angular/material/card';
 import { RecientesComponent } from './components/recientes/recientes.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 const rutas: Routes = [
-  { path: '', component: InicioComponent },
+  // { path: '', component: InicioComponent },
   { path: 'recientes', component: RecientesComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // redirige al login si la ruta no se encuentra
 ];
 
@@ -23,6 +25,7 @@ const rutas: Routes = [
     InicioComponent,
     RecientesComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
