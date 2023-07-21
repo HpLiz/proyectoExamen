@@ -13,7 +13,7 @@ export class ViewRegistrosComponent implements OnInit {
   public users: any = [];
   totalUsuarios: number = 0;
   paginaActual = 1;
-  usuariosPorPagina = 40;
+  usuariosPorPagina = 10;
   paginasTotales = 0;
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class ViewRegistrosComponent implements OnInit {
       .getUsers(
         `https://randomuser.me/api/?inc=name,email,picture,phone&?page=${
           this.paginaActual
-        }&results=${1000}&seed=abc`
+        }&results=${50}&seed=abc`
       )
       .subscribe((res: any) => {
         this.users = res.results;
