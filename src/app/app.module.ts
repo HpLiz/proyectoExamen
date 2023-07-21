@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
+import { ViewRegistrosComponent } from './components/view-registros/view-registros.component';
 
 const rutas: Routes = [
   // { path: '', component: InicioComponent },
@@ -20,6 +21,7 @@ const rutas: Routes = [
   { path: 'recientes', component: RecientesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'registros-api', component: ViewRegistrosComponent },
 ];
 
 @NgModule({
@@ -32,6 +34,7 @@ const rutas: Routes = [
     NavbarComponent,
     AlertComponent,
     DrawerComponent,
+    ViewRegistrosComponent,
   ],
   imports: [
     BrowserModule,
