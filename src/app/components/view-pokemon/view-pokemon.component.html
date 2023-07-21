@@ -1,5 +1,23 @@
 <app-navbar [textNavbar]="'Pokemones (API)'"></app-navbar>
 
 <div class="w-4/5 mx-auto flex flex-col items-center content-center">
-    hola
+    <input type="number" placeholder="Type here"
+        class="input input-bordered input-info w-full max-w-xs" />
+
+    <pagination-controls (pageChange)="paginaActual= $event"></pagination-controls>
+
+    <div class="grid grid-cols-4 gap-x-7 gap-y-4">
+        <div class="card w-44 bg-base-100 shadow-xl"
+            *ngFor="let p of pokemones | paginate: { itemsPerPage: pokemonesPorPagina, currentPage: paginaActual,totalItems: 1000 }">
+            <figure class="px-10 pt-10">
+                <img [src]="getImageUrl(getId(p))"
+                    alt="Shoes" class="rounded-md" />
+            </figure>
+            <div class="card-body items-center text-center">
+                <h2 class="card-title">{{p.name}}</h2>
+
+                <!-- <button class="btn btn-primary">{{getId(p)}}</button> -->
+            </div>
+        </div>
+    </div>
 </div>

@@ -29,7 +29,7 @@ export class ViewRegistrosComponent implements OnInit {
       .subscribe((res: any) => {
         this.users = res.results;
         this.totalUsuarios = res.info.results;
-        this.paginasTotales = 24;
+        // this.paginasTotales = 24;
       });
   }
 }
