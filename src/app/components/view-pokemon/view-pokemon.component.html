@@ -11,9 +11,9 @@
     </div>
     <pagination-controls (pageChange)="paginaActual= $event"></pagination-controls>
 
-    <div class="grid md:grid-cols-4 gap-x-7 gap-y-4 sm:grid-cols-3 mb-10">
+    <div class="grid md:grid-cols-4 gap-x-7 gap-y-6 sm:grid-cols-3 mb-10">
         <div
-            class="card w-44 bg-primary-100 shadow-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 "
+            class="card w-44 bg-primary-100 shadow-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 hover:scale-110 ease-in duration-200 "
             *ngFor="let p of pokemones | paginate: { itemsPerPage: pokemonesPorPagina, currentPage: paginaActual,totalItems: 1000 }">
             <figure class="px-10 pt-10">
                 <img [src]="getImageUrl(getId(p))"
