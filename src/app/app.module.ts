@@ -17,6 +17,7 @@ import { DrawerComponent } from './components/drawer/drawer.component';
 import { ViewRegistrosComponent } from './components/view-registros/view-registros.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ViewPokemonComponent } from './components/view-pokemon/view-pokemon.component';
+import { ViewPokemonListComponent } from './components/view-pokemon-list/view-pokemon-list.component';
 
 const rutas: Routes = [
   // { path: '', component: InicioComponent },
@@ -26,6 +27,7 @@ const rutas: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'registros-api', component: ViewRegistrosComponent },
   { path: 'pokemon-api', component: ViewPokemonComponent },
+  { path: 'pokemon-list', component: ViewPokemonListComponent },
 ];
 
 @NgModule({
@@ -40,6 +42,7 @@ const rutas: Routes = [
     DrawerComponent,
     ViewRegistrosComponent,
     ViewPokemonComponent,
+    ViewPokemonListComponent,
   ],
   imports: [
     BrowserModule,

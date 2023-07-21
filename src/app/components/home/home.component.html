@@ -1,10 +1,43 @@
-<app-navbar [textNavbar]="header"></app-navbar>
+<app-navbar [textNavbar]="'Bienvenido a API Pokemon'"></app-navbar>
 
-<div class="w-1/2 mx-auto">
-    <div class="mockup-window border bg-base-300">
-        <div class="flex justify-center px-4 py-16 bg-base-200">Hello!</div>
+<!--<div
+    class="w-4/5 mx-auto flex flex-col items-center content-center ">
+
+    <div class="grid md:grid-cols-4 gap-x-7 gap-y-6 sm:grid-cols-3 mb-10">
+        <div
+            class="card w-44 bg-info-content shadow-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 hover:scale-110 ease-in duration-200 "
+            *ngFor="let p of pokemones">
+            <figure class="px-10 pt-10">
+                <img [src]="getImageUrl(getId(p))"
+                    alt="Shoes" class="rounded-md" />
+            </figure>
+            <div class="card-body items-center text-center">
+                <h2 class="card-title">{{p.name}}</h2>
+                <h3 class="font-bold">#{{getId(p)}}</h3>
+            </div>
+        </div>
     </div>
-
-    <!-- TABLA -->
-
-</div>
+</div>-->
+<div class="carousel carousel-center rounded-box">
+    <div class="carousel-item">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/175.png" alt="Togepi" />
+      </div>
+    <div class="carousel-item">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/152.png" alt="Chikorita" />
+    </div> 
+    <div class="carousel-item">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/155.png" alt="Cyndaquil" />
+    </div> 
+    <div class="carousel-item">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png" alt="Totodile" />
+    </div> 
+    <div class="carousel-item">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/92.png" alt="Gastly" />
+    </div> 
+    <div class="carousel-item">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/77.png" alt="Ponyta" />
+    </div> 
+    <div class="carousel-item">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" />
+    </div> 
+  </div>

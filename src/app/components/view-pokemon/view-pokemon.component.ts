@@ -8,9 +8,9 @@ import { PokemonService } from 'src/services/pokemon.service';
 })
 export class ViewPokemonComponent implements OnInit {
   constructor(private pokemonesService: PokemonService) {}
-  totalPokemones: number = 1000;
-  paginaActual = 1;
-  pokemonesPorPagina = 40;
+  //totalPokemones: number = 12;
+  //paginaActual = 1;
+  //pokemonesPorPagina = 10;
   pokemones: any = [];
 
   ngOnInit(): void {
@@ -19,10 +19,10 @@ export class ViewPokemonComponent implements OnInit {
 
   cargarPokemones() {
     this.pokemonesService
-      .getPokemons('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1000')
+      .getPokemons('https://pokeapi.co/api/v2/pokemon?offset=150&limit=12')
       .subscribe((response: any) => {
         console.log(response.results.length);
-        this.totalPokemones = response.results.length;
+        //this.totalPokemones = response.results.length;
         this.pokemones = response.results;
       });
   }
@@ -36,8 +36,8 @@ export class ViewPokemonComponent implements OnInit {
   getImageUrl(id: number): string {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
   }
-  handlerChangeRangeValue(event: Event) {
+  /*handlerChangeRangeValue(event: Event) {
     const inputRange = event.target as HTMLInputElement;
     this.pokemonesPorPagina = +inputRange.value;
-  }
+  }*/
 }
