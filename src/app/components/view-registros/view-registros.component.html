@@ -1,16 +1,18 @@
 <app-navbar [textNavbar]="'Listado de Registros (API)'"></app-navbar>
 
 <div class="w-4/5 mx-auto flex flex-col items-center content-center">
-    <div class="join ">
-        <button class="join-item btn" [disabled]="paginaAcutal===1"
-            (click)="previousPage(paginaAcutal)">
+    <!-- <div class="join ">
+        <button class="join-item btn" [disabled]="paginaActual===1"
+            (click)="previousPage(paginaActual)">
             «
         </button>
-        <button class="join-item btn">Page {{paginaAcutal}}</button>
+        <button class="join-item btn">Page {{paginaActual}}</button>
         <button class="join-item btn"
-            [disabled]="paginaAcutal === paginasTotales"
-            (click)="nextPage(paginaAcutal)">»</button>
-    </div>
+            [disabled]="paginaActual === paginasTotales"
+            (click)="nextPage(paginaActual)">»</button>
+    </div> -->
+
+    <pagination-controls (pageChange)="paginaActual= $event"></pagination-controls>
 
     <!-- TABLA DE USUARIOS -->
     <div class="overflow-x-auto w-3/4 overflow-y-hidden">
@@ -24,7 +26,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let u of users">
+                <tr
+                    *ngFor="let u of users | paginate: { itemsPerPage: usuariosPorPagina, currentPage: paginaActual,totalItems: 1000 }">
                     <td>
                         <div class="flex items-center space-x-3">
                             <div class="avatar">

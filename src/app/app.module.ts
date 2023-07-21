@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { ViewRegistrosComponent } from './components/view-registros/view-registros.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const rutas: Routes = [
   // { path: '', component: InicioComponent },
@@ -44,6 +45,7 @@ const rutas: Routes = [
     MatCardModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

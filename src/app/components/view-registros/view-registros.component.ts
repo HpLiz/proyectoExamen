@@ -12,7 +12,7 @@ export class ViewRegistrosComponent implements OnInit {
   constructor(private randomUsersService: RandomUserService) {}
   public users: any = [];
   totalUsuarios: number = 0;
-  paginaAcutal = 1;
+  paginaActual = 1;
   usuariosPorPagina = 40;
   paginasTotales = 0;
 
@@ -22,25 +22,14 @@ export class ViewRegistrosComponent implements OnInit {
   public cargarUsuarios() {
     this.randomUsersService
       .getUsers(
-        `https://randomuser.me/api/?inc=name,email,picture,phone&?page=${this.paginaAcutal}&results=${this.usuariosPorPagina}&seed=abc`
+        `https://randomuser.me/api/?inc=name,email,picture,phone&?page=${
+          this.paginaActual
+        }&results=${1000}&seed=abc`
       )
       .subscribe((res: any) => {
         this.users = res.results;
         this.totalUsuarios = res.info.results;
         this.paginasTotales = 24;
       });
-  }
-
-  nextPage(indexPage: number) {
-    if (indexPage < this.paginasTotales) {
-      this.paginaAcutal++;
-      this.cargarUsuarios();
-    }
-  }
-  previousPage(indexPage: number) {
-    if (indexPage > 1) {
-      this.paginaAcutal--;
-      this.cargarUsuarios();
-    }
   }
 }
