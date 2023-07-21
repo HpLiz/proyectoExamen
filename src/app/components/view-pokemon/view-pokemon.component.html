@@ -3,7 +3,7 @@
 <div
     class="w-4/5 mx-auto flex flex-col items-center content-center ">
     <div class="mb-5 mt-2 w-64 flex items-center flex-col">
-        <span class="mb-2">pokemones por pagina</span>
+        <span class="mb-2">pokemones por pagina: {{pokemonesPorPagina}}</span>
         <input type="range" min="1" max="40"
             [value]="pokemonesPorPagina"
             (input)="handlerChangeRangeValue($event)"
@@ -11,8 +11,9 @@
     </div>
     <pagination-controls (pageChange)="paginaActual= $event"></pagination-controls>
 
-    <div class="grid grid-cols-4 gap-x-7 gap-y-4 mb-10">
-        <div class="card w-44 bg-base-100 shadow-xl"
+    <div class="grid md:grid-cols-4 gap-x-7 gap-y-4 sm:grid-cols-3 mb-10">
+        <div
+            class="card w-44 bg-primary-100 shadow-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 "
             *ngFor="let p of pokemones | paginate: { itemsPerPage: pokemonesPorPagina, currentPage: paginaActual,totalItems: 1000 }">
             <figure class="px-10 pt-10">
                 <img [src]="getImageUrl(getId(p))"
