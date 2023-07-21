@@ -1,16 +1,6 @@
 <app-navbar [textNavbar]="'Listado de Registros (API)'"></app-navbar>
 
 <div class="w-4/5 mx-auto flex flex-col items-center content-center">
-    <!-- <div class="join ">
-        <button class="join-item btn" [disabled]="paginaActual===1"
-            (click)="previousPage(paginaActual)">
-            «
-        </button>
-        <button class="join-item btn">Page {{paginaActual}}</button>
-        <button class="join-item btn"
-            [disabled]="paginaActual === paginasTotales"
-            (click)="nextPage(paginaActual)">»</button>
-    </div> -->
 
     <pagination-controls (pageChange)="paginaActual= $event"></pagination-controls>
 

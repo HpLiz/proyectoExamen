@@ -36,4 +36,8 @@ export class ViewPokemonComponent implements OnInit {
   getImageUrl(id: number): string {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
   }
+  handlerChangeRangeValue(event: Event) {
+    const inputRange = event.target as HTMLInputElement;
+    this.pokemonesPorPagina = +inputRange.value;
+  }
 }
