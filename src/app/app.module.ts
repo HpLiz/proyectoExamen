@@ -8,16 +8,17 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { RecientesComponent } from './components/recientes/recientes.component';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 const rutas: Routes = [
   // { path: '', component: InicioComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // redirige al login si la ruta no se encuentra
   { path: 'recientes', component: RecientesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // redirige al login si la ruta no se encuentra
 ];
 
 @NgModule({
@@ -28,6 +29,7 @@ const rutas: Routes = [
     LoginComponent,
     HomeComponent,
     NavbarComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

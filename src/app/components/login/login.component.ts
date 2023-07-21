@@ -12,10 +12,14 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   fullname: string = '';
+  disableLoginButton: boolean = false;
+  warning: boolean = false;
+  warningMessage: string = '';
 
-  login() {
+  login(event: Event) {
     // alert(`email: ${this.email}, password: ${this.password}`);
     // this.validar();
+    event.preventDefault();
     const user: object = {
       email: this.email,
       password: this.password,
@@ -33,26 +37,32 @@ export class LoginComponent {
 
   validar() {
     if (!this.fullname || !this.password || !this.email) {
-      alert('Todos los campos son obligatorios');
+      // alert();
+      this.warningMessage = 'Todos los campos son obligatorios';
+      this.warning = true;
       return false;
     }
     // valida nombre
     const fullnameRegex = /^[a-zA-Z\s]+$/;
     if (!fullnameRegex.test(this.fullname)) {
-      alert('El nombre solo puede contener letras y numeros');
+      this.warningMessage = 'El nombre solo puede contener letras y numeros';
+      this.warning = true;
       return false;
     }
 
     // validar password
     if (this.password.length < 6) {
-      alert('la constraseña debe contener al menos 6 caracteres');
+      this.warningMessage =
+        'la constraseña debe contener al menos 6 caracteres';
+      this.warning = true;
       return false;
     }
 
     // validar email
     const emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailregex.test(this.email)) {
-      alert('Correo electrónico inválido.');
+      this.warningMessage = 'Correo electrónico inválido.';
+      this.warning = true;
       return false;
     }
     return true;
