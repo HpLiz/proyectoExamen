@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { DrawerComponent } from './components/drawer/drawer.component';
 
 const rutas: Routes = [
   // { path: '', component: InicioComponent },
@@ -30,6 +31,7 @@ const rutas: Routes = [
     HomeComponent,
     NavbarComponent,
     AlertComponent,
+    DrawerComponent,
   ],
   imports: [
     BrowserModule,
