@@ -21,14 +21,6 @@
                 </div>
                 <div class="form-control">
                     <label class="label">
-                        <span class="label-text">Correo Electrónico</span>
-                    </label>
-                    <input type="text" placeholder="email"
-                        class="input input-bordered"
-                        [(ngModel)]="email" />
-                </div>
-                <div class="form-control">
-                    <label class="label">
                         <span class="label-text">Contraseña</span>
                     </label>
                     <input type="password" placeholder="password"
@@ -40,51 +32,10 @@
                         class="btn btn-primary"
                         (click)="login($event)">Ingresar</button>
                 </div>
-                <button class="btn" onclick="my_modal_3.showModal()">Registrarse</button>
+                <hr><span style="text-align: center;">No tienes cuenta?</span><hr/>
+                <button class="btn" (click)="singup($event)">Registrate</button>
             </div>
         </div>
     </div>
-    <dialog id="my_modal_3" class="modal">
-        <form method="dialog" class="modal-box">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-
-            <div class="text-center lg:text-left">
-                <h1 class="text-5xl font-bold">Registrate!</h1>
-                <p class="py-6">Rellena todos los campos.</p>
-            </div>
-
-            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <div class="card-body">
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Nombre de usuario</span>
-                        </label>
-                        <input type="text" placeholder="nombre" class="input input-bordered"
-                            [(ngModel)]="fullname2"/>
-                    </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Email</span>
-                        </label>
-                        <input type="text" placeholder="email" class="input input-bordered"
-                            [(ngModel)]="email2" />
-                    </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Contraseña</span>
-                        </label>
-                        <input type="password" placeholder="password" class="input input-bordered"
-                            [(ngModel)]="password2" />
-                    </div>
-                    <div class="form-control mt-6">
-                        <!--<button class="btn btn-primary" (click)="signup()">Sign up</button>-->
-                        <button (disabled)="disableLoginButton"
-                        class="btn btn-primary"
-                        (click)="login($event)">Registrarse</button>
-                    </div>
-
-                </div>
-            </div>
-        </form>
-    </dialog>
+    
 </div>

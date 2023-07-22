@@ -19,16 +19,11 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   fullname: string = '';
-  email2: string = '';
-  password2: string = '';
-  fullname2: string = '';
   disableLoginButton: boolean = false;
   warning: boolean = false;
   warningMessage: string = '';
 
   login(event: Event) {
-    // alert(`email: ${this.email}, password: ${this.password}`);
-    // this.validar();
     event.preventDefault();
     const user: object = {
       email: this.email,
@@ -37,14 +32,15 @@ export class LoginComponent {
     };
 
     if (this.validar()) {
-      //sessionStorage.setItem('email', this.email);
-      // sessionStorage.setItem('password', this.password);
       sessionStorage.setItem('fullname', this.fullname);
 
       this.router.navigate(['/home']);
     }
   }
   
+  singup(event: Event) {
+    this.router.navigate(['/singup']);
+  }
 
   validar() {
     //if (!this.fullname || !this.password || !this.email) {
@@ -70,13 +66,6 @@ export class LoginComponent {
       return false;
     }
 
-    // validar email
-    const emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailregex.test(this.email)) {
-      this.warningMessage = 'Correo electrónico inválido.';
-      this.warning = true;
-      return false;
-    }
     return true;
   }
 

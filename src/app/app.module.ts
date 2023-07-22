@@ -18,6 +18,7 @@ import { ViewRegistrosComponent } from './components/view-registros/view-registr
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ViewPokemonComponent } from './components/view-pokemon/view-pokemon.component';
 import { ViewPokemonListComponent } from './components/view-pokemon-list/view-pokemon-list.component';
+import { SingupComponent } from './components/singup/singup.component';
 
 const rutas: Routes = [
   // { path: '', component: InicioComponent },
@@ -25,6 +26,7 @@ const rutas: Routes = [
   { path: 'recientes', component: RecientesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'singup', component: SingupComponent },
   { path: 'registros-api', component: ViewRegistrosComponent },
   { path: 'pokemon-api', component: ViewPokemonComponent },
   { path: 'pokemon-list', component: ViewPokemonListComponent },
@@ -37,12 +39,14 @@ const rutas: Routes = [
     RecientesComponent,
     LoginComponent,
     HomeComponent,
+    SingupComponent,
     NavbarComponent,
     AlertComponent,
     DrawerComponent,
     ViewRegistrosComponent,
     ViewPokemonComponent,
     ViewPokemonListComponent,
+    SingupComponent,
   ],
   imports: [
     BrowserModule,

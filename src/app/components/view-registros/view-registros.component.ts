@@ -32,4 +32,8 @@ export class ViewRegistrosComponent implements OnInit {
         // this.paginasTotales = 24;
       });
   }
+  handlerChangeRangeValue(event: Event) {
+    const inputRange = event.target as HTMLInputElement;
+    this.usuariosPorPagina = +inputRange.value;
+  }
 }
