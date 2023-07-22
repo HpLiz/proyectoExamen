@@ -7,7 +7,7 @@ import { PokemonService } from 'src/services/pokemon.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  /*constructor(private pokemonesService: PokemonService) {}
+  constructor(private pokemonesService: PokemonService) {}
   pokemones: any = [];
 
   ngOnInit(): void {
@@ -31,5 +31,5 @@ export class HomeComponent {
   }
   getImageUrl(id: number): string {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
-  }*/
+  }
 }

@@ -12,6 +12,9 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   fullname: string = '';
+  email2: string = '';
+  password2: string = '';
+  fullname2: string = '';
   disableLoginButton: boolean = false;
   warning: boolean = false;
   warningMessage: string = '';
@@ -27,16 +30,18 @@ export class LoginComponent {
     };
 
     if (this.validar()) {
-      sessionStorage.setItem('email', this.email);
+      //sessionStorage.setItem('email', this.email);
       // sessionStorage.setItem('password', this.password);
       sessionStorage.setItem('fullname', this.fullname);
 
       this.router.navigate(['/home']);
     }
   }
+  
 
   validar() {
-    if (!this.fullname || !this.password || !this.email) {
+    //if (!this.fullname || !this.password || !this.email) {
+    if (!this.fullname || !this.password) {
       // alert();
       this.warningMessage = 'Todos los campos son obligatorios';
       this.warning = true;
@@ -67,4 +72,5 @@ export class LoginComponent {
     }
     return true;
   }
+  
 }

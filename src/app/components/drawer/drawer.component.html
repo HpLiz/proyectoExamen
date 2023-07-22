@@ -7,14 +7,27 @@
         </label>
     </div>
     <div class="drawer-side">
+        
         <label for="my-drawer" class="drawer-overlay"></label>
+        
         <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
+            <li>
+                <div class="mx-auto flex flex-col items-center content-center">
+                    <div class="avatar online">
+                        <div class="w-24 rounded-full">
+                          <img [src]="user.picture.medium" alt="user"/>
+                        </div>
+                    </div>
+                    <h2>{{user.name.first + ' ' + user.name.last}}</h2>
+                </div>
+            </li>
             <!-- Sidebar content here -->
             <li><a routerLink="/home"> <i class="fa-solid fa-house"></i>Home</a></li>
             <!--<li><a routerLink="/pokemon-api"> <i class="fa-solid fa-house"></i>Home</a></li>-->
             <li><a routerLink="/pokemon-list"> <i class="fa-solid fa-ghost"></i>Pokemones</a></li>
             <li><a routerLink="/registros-api"><i class="fa-solid fa-users-line"></i>Usuarios
                     (RandomUser)</a></li>
+            <li><a routerLink="/login" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>Cerrar sesion</a></li>
 
         </ul>
     </div>
