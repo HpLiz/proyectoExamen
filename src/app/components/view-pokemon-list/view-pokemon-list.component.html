@@ -13,18 +13,21 @@
 
     <!-- TABLA DE POKEMONES -->
     <div class="overflow-x-auto w-3/4 overflow-y-hidden">
-        <table class="table">
+        <table class="table border border-solid border-gray-300">
             <!-- head -->
             <thead>
                 <tr>
-                    <th>Name</th>
                     <th>ID</th>
-                    <th>Type</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
                 </tr>
             </thead>
             <tbody>
                 <tr
                     *ngFor="let p of pokemones | paginate: { itemsPerPage: pokemonesPorPagina, currentPage: paginaActual,totalItems: 1000 }">
+                    <td>
+                        {{getId(p)}}
+                    </td>
                     <td>
                         <div class="flex items-center space-x-3">
                             <div class="avatar">
@@ -39,9 +42,6 @@
                             </div>
                         </div>
                     </td>
-                    <td>
-                        {{getId(p)}}
-                    </td>
                     <td>{{getType(p)}}</td>
 
                 </tr>
@@ -50,3 +50,4 @@
 
         </table>
     </div>
+</div>

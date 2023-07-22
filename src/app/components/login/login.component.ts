@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RandomUserService } from './../../../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private RandomUserService: RandomUserService) {}
+  
+  public user: any = null;
+  //constructor(private RandomUserService: RandomUserService) { }
+  nombre: string = '';
+  correo: string = '';
+  imag: string = '';
 
   email: string = '';
   password: string = '';
@@ -72,5 +79,19 @@ export class LoginComponent {
     }
     return true;
   }
+
+  // para guardar en storage
   
+  ngOnInit() {
+    this.RandomUserService.getUsers('https://randomuser.me/api/').subscribe(
+      (res: any) => {
+        console.log('Response', res.results[0]);
+        this.user = res.results[0];
+        console.log(this.user.email);
+        sessionStorage.setItem('nombre', this.user.name.first + this.user.name.last);
+        sessionStorage.setItem('correo', this.user.email);
+        sessionStorage.setItem('foto', this.user.picture.medium);
+      }
+    );
+  }
 }
