@@ -5,8 +5,8 @@
 
     <div class="hero-content flex-col lg:flex-row-reverse">
         <div class="text-center lg:text-left">
-            <h1 class="text-5xl font-bold">Sign up!</h1>
-            <p class="py-6">Create a new account to use PokeApi.</p>
+            <h1 class="text-5xl font-bold">Registrate!</h1>
+            <p class="py-6">Crea una nueva cuenta para PokeApi.</p>
         </div>
         <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div class="card-body">
@@ -14,7 +14,7 @@
                     <label class="label">
                         <span class="label-text">Nombre de usuario:</span>
                     </label>
-                    <input type="text" placeholder="user" class="input input-bordered" [(ngModel)]="fullname" 
+                    <input type="text" placeholder="usuario" class="input input-bordered" [(ngModel)]="fullname" 
                     [ngClass]="{ 'input-error': warning && !fullname || !fullnameRegex.test(fullname) }"/>
                     <span *ngIf="warning && !fullname" class="text-red-500 text-xs">Fullname is required.</span>
                 </div>
@@ -22,7 +22,7 @@
                     <label class="label">
                         <span class="label-text">Correo electrónico:</span>
                     </label>
-                    <input type="text" placeholder="email" class="input input-bordered" [(ngModel)]="email"
+                    <input type="text" placeholder="correo" class="input input-bordered" [(ngModel)]="email"
                     [ngClass]="{ 'input-error': warning && !email || !emailregex.test(email) }"/>
                     <span *ngIf="warning && !email" class="text-red-500 text-xs">Correo requerido</span>
                 </div>
@@ -30,7 +30,7 @@
                     <label class="label">
                         <span class="label-text">Contraseña:</span>
                     </label>
-                    <input type="password" placeholder="password" class="input input-bordered {{ warning && !password || password.length < 6 ? 'border-red-500' : '' }}" [(ngModel)]="password" />
+                    <input type="password" placeholder="contraseña" class="input input-bordered {{ warning && !password || password.length < 6 ? 'border-red-500' : '' }}" [(ngModel)]="password" />
                     <span *ngIf="warning && !password || password.length < 6" class="text-red-500 text-xs">Contraseña requerida</span>
                 </div>
                 <div class="form-control mt-6">
