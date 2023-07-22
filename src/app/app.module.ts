@@ -8,10 +8,16 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { RecientesComponent } from './components/recientes/recientes.component';
-import { InicioComponent } from './components/inicio/inicio.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { DrawerComponent } from './components/drawer/drawer.component';
+import { ViewRegistrosComponent } from './components/view-registros/view-registros.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ViewPokemonComponent } from './components/view-pokemon/view-pokemon.component';
+import { ViewPokemonListComponent } from './components/view-pokemon-list/view-pokemon-list.component';
+import { SingupComponent } from './components/singup/singup.component';
 
 const rutas: Routes = [
   // { path: '', component: InicioComponent },
