@@ -10,20 +10,17 @@ export class DrawerComponent implements OnInit{
   logout() {
     sessionStorage.clear();
   }
-  constructor(private randomUsersService: RandomUserService) {}
+  public user: any=null;
+  constructor(private RandomUserService: RandomUserService) {}
   // interface Usuario{}
-  public user: any;
 
-  ngOnInit(): void {
-    this.cargarUsuarios();
-  }
-  public cargarUsuarios() {
-    this.randomUsersService
-      .getUsers(
-        `https://randomuser.me/api/?inc=name,email,picture,phone&seed=abc`
-      )
-      .subscribe((res: any) => {
-        this.user = res.results;
-      });
+  ngOnInit() {
+    this.RandomUserService.getUsers('https://randomuser.me/api/').subscribe(
+      (res: any) => {
+        console.log('Response', res.results[0]);
+        this.user = res.results[0];
+        console.log(this.user.picture);
+      }
+    );
   }
 }
